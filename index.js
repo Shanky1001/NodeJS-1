@@ -7,15 +7,24 @@ fs.writeFileSync("data.json", JSON.stringify({ name: "Shashank Rai", desg: "Fron
 
 // Making Code Asynchronus
 
-console.log('Hello');
+// console.log('Hello');
 
-const wait = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve()
-        console.log("World");
-    }, 2000)
-})
+// const wait = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve()
+//         console.log("World");
+//     }, 2000)
+// })
 
-wait.then(() => {
-    console.log("This is Shashank Rai");
-})  
+// wait.then(() => {
+//     console.log("This is Shashank Rai");
+// })  
+
+
+const http = require('http')
+
+http.createServer((req,res)=>{
+res.writeHead(200,{'content-type':'application/json'})
+res.write("Hello World, trying my first server setup with NodeJS.")
+res.end();
+}).listen(4000)
