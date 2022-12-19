@@ -21,10 +21,26 @@ fs.writeFileSync("data.json", JSON.stringify({ name: "Shashank Rai", desg: "Fron
 // })  
 
 
-const http = require('http')
+// const http = require('http')
 
-http.createServer((req,res)=>{
-res.writeHead(200,{'content-type':'application/json'})
-res.write("Hello World, trying my first server setup with NodeJS.")
-res.end();
-}).listen(4000)
+// http.createServer((req,res)=>{
+// res.writeHead(200,{'content-type':'application/json'})
+// res.write("Hello World, trying my first server setup with NodeJS.")
+// res.end();
+// }).listen(4000)
+
+
+// Express Practice ===========================>>
+
+const express = require("express");
+const app = express();
+
+app.get("", (req, res) => {
+    res.send("This is Home Page");
+})
+
+app.get("/about", (req, res) => {
+    res.send("This is About Page");
+})
+
+app.listen(4500);
